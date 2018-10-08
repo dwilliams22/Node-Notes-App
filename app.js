@@ -4,9 +4,8 @@ const _ = require("lodash");
 
 const notes = require("./notes.js");
 
-let argv = yargs.argv;
-console.log(argv);
-let command = process.argv[2].toLowerCase();
+const argv = yargs.argv;
+let command = argv._[0].toLowerCase();
 
 if (command === "add") {
    notes.addNote(argv.title, argv.body);
